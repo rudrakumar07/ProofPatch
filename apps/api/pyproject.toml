@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "proofpatch-api"
+version = "0.1.0"
+description = "ProofPatch API: thin FastAPI layer over the proofpatch engine."
+requires-python = ">=3.10"
+dependencies = [
+    "proofpatch-engine",
+    "fastapi>=0.110",
+    "uvicorn>=0.27",
+    "sqlalchemy>=2.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["proofpatch_api*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::pytest.PytestCollectionWarning"]
+norecursedirs = ["proofpatch_api", "dist", "node_modules", "build"]

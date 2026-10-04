@@ -1,0 +1,19 @@
+{
+  "name": "proofpatch-cline-bridge",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Node bridge that lets the ProofPatch Python engine call the Cline SDK agent runtime.",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "proofpatch-cline-bridge": "./src/bridge.mjs"
+  },
+  "scripts": {
+    "start": "node ./src/bridge.mjs"
+  },
+  "dependencies": {
+    "@cline/sdk": "^0.0.90"
+  }
+}

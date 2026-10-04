@@ -1,0 +1,22 @@
+# Ruff configuration for ProofPatch Python code.
+
+[lint]
+select = ["F", "I", "UP", "SIM", "PIE", "S", "BLE", "PLW", "B"]
+ignore = [
+    "B008",  # typer.Option(...) in defaults is idiomatic Typer usage
+    "BLE001",  # broad excepts here protect an in-flight verification run by design
+    "S110",  # try/except/pass is intentional in event plumbing
+    "S112",  # try/except/continue is intentional in event plumbing
+    "UP022",  # subprocess PIPE streams are used intentionally (not run(check=True))
+    "PLW1510",  # same: we inspect return codes ourselves
+]
+
+[lint.per-file-ignores]
+"packages/engine/proofpatch/verification/runner.py" = ["S602", "S603", "S607"]
+"packages/engine/proofpatch/repo/*" = ["S603", "S607"]
+"packages/engine/proofpatch/verification/static.py" = ["S603", "S607"]
+"packages/engine/tests/*" = ["S603", "S607", "PLW2901", "B904", "UP", "S101", "E402", "E731", "S108", "S105"]
+"apps/api/proofpatch_api/*" = ["S110", "S112", "BLE001"]
+"apps/api/tests/*" = ["S101", "E402"]
+"fixtures/python-session-bug/*" = ["S101"]
+"**/verification/pytest_parser.py" = ["S314"]

@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+build/
+dist/
+
+# ProofPatch runtime artifacts
+.proofpatch/
+.proofpatch_generated_tests/
+.proofpatch_pytest.xml
+.proofpatch_generated.xml
+
+# Fixture repository state (created by scripts/setup_fixture.sh; not committed)
+fixtures/python-session-bug/.git/
+fixtures/python-session-bug/__pycache__/
+fixtures/python-session-bug/.pytest_cache/
+fixtures/python-session-bug/.proofpatch*
+fixtures/python-session-bug/tests/__pycache__/
+fixtures/python-session-bug/src/*/__pycache__/
+
+
+# External test targets cloned for verification demos
+targets/
+
+# Node / web
+node_modules/
+apps/web/dist/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+*.tmp

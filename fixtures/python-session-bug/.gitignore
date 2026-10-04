@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.proofpatch_generated_tests/
+.proofpatch_pytest.xml
+.proofpatch_generated.xml
